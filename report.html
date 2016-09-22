@@ -11925,7 +11925,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Increase in the value of RM would increase MEDV, more rooms means more expenses and more soil needed. Increase on LSTAT would mean that the homeowners have a lower income therefore would decrease their ability to purchase, MEDV would be going down so that the houses can be sold. An increase or decrease would probably have an uncertain effect on MEDV.</p>
+<p>Increase in the value of RM would increase MEDV, more rooms means more expenses and more soil needed. Increase on LSTAT would mean that the homeowners have a lower income therefore would decrease their ability to purchase, MEDV would be going down so that the houses can be sold. An increase or decrease on PTRATIO would probably have an uncertain effect on MEDV.</p>
 
 </div>
 </div>
@@ -12088,7 +12088,7 @@ Standard deviation of prices: $165,171.13
 <span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 
 <span class="c1"># TODO: Shuffle and split the data into training and testing subsets</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 
 <span class="c1"># Success</span>
@@ -13239,7 +13239,7 @@ mZlZC3iwZWZmZmZm1gIebJmZmZmZmbXA/wPQNSVWYKaQUwAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Max_depth = 1 graph. Thr training curve and testing curve start to have closer values. Yes , it would be benefitable to have more training points but only to a certain point.</p>
+<p>Max_depth = 1 graph. The difference between training scores and test scores become shorter. WE wont have benefit if we add more training points, it would seem that that the training and testing score has reached its peak.</p>
 
 </div>
 </div>
@@ -13747,7 +13747,7 @@ OkQamnp8IlId/VYsFyT1+EREpElRj09ERJoUBZ+IiDQpCj4REWlSFHwiItKkKPhERKRJUfCJiEiT
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When the model is trained with a maximum depth of 1 the model suffers from a high bias and a high variance. Training the model with a maximum depth of 10 would have a lower bias and variance. The visual cues that justify my conclusions is the increase of model score.</p>
+<p>When the model is trained with a maximum depth of 1 the model suffers from a high bias because it had a low score and high variance because the difference between training and validation score is little . Training the model with a maximum depth of 10 would have a lower bias and high variance because the validation score and training score have a huge difference. The visual cues that justify my conclusions is the increase of model score.</p>
 
 </div>
 </div>
@@ -13798,7 +13798,7 @@ OkQamnp8IlId/VYsFyT1+EREpElRj09ERJoUBZ+IiDQpCj4REWlSFHwiItKkKPhERKRJUfCJiEiT
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Grid Search gives you the best model by specifying the parameters. Instead of manually looking for the best model which would take time, using this approach would allow you to save time.</p>
+<p>In a Grid Search you train models and evaluate it using cross validation. Out of these models you select the best.</p>
 
 </div>
 </div>
@@ -13814,12 +13814,25 @@ OkQamnp8IlId/VYsFyT1+EREpElRj09ERJoUBZ+IiDQpCj4REWlSFHwiItKkKPhERKRJUfCJiEiT
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>k-fold cross-validation training technique is seperating the samples into equal sizes and cross validating the model if it is a good model. Using a k-fold cross-validation training technique helps in chosing what models are best, without a cross validated set, we could get a good model that would not be a good model on other samples.</p>
+<p>k-fold cross-validation training technique is a type of cross validation technique where you seperate a training set into k subsets for k iterations. Without cross validating we would not be able to extract more information.</p>
 
 </div>
 </div>
@@ -13873,7 +13886,7 @@ OkQamnp8IlId/VYsFyT1+EREpElRj09ERJoUBZ+IiDQpCj4REWlSFHwiItKkKPhERKRJUfCJiEiT
     <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="c1"># TODO: Create a dictionary for the parameter &#39;max_depth&#39; with a range from 1 to 10</span>
-    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="p">}</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span> <span class="p">}</span>
 
     <span class="c1"># TODO: Transform &#39;performance_metric&#39; into a scoring function using &#39;make_scorer&#39; </span>
     <span class="n">scoring_fnc</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">performance_metric</span><span class="p">)</span>
